@@ -1,0 +1,1 @@
+# Wedding [![Build Status](https://secure.travis-ci.org/JustinCampbell/Wedding.png)](https://secure.travis-ci.org/JustinCampbell/Wedding) [![Dependency Status](https://gemnasium.com/JustinCampbell/Wedding.png)](https://gemnasium.com/JustinCampbell/Wedding)
