@@ -12,5 +12,20 @@ group :assets do
 end
 
 group :development, :test do
+  gem 'capybara'
+  gem 'cucumber-rails'
+  gem 'database_cleaner'
+  gem 'rspec-rails'
   gem 'sqlite3'
+
+  group :guard do
+    gem 'guard-bundler'
+    gem 'guard-cucumber'
+    gem 'guard-rspec'
+  end
+
+  group :darwin do
+    gem 'growl'
+    gem 'rb-fsevent'
+  end
 end
