@@ -4,8 +4,11 @@ Feature: Guest
   As a guest
   I want to see information about the wedding
 
-  Scenario: Names and date
+  Scenario: Names
     When I visit the site
     Then I should see Beth
     And I should see Justin
-    And I should see January 5th, 2013
+
+  Scenario: Date
+    When I visit the site
+    Then I should see January 5th, 2013
