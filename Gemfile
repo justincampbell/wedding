@@ -5,6 +5,7 @@ gem 'rails', '3.2.1'
 gem 'heroku'
 gem 'jquery-rails'
 gem 'json'
+gem 'newrelic_rpm'
 gem 'thin'
 
 group :assets do
