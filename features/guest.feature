@@ -13,3 +13,6 @@ Feature: Guest
 
   Scenario: Date
     Then I should see January 5th, 2013
+
+  Scenario: Location
+    Then I should see Merion, PA
