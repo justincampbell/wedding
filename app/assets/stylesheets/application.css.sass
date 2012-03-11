@@ -1,16 +1,27 @@
 @import bourbon
 @import reset
 
-body
-  font-family: "Helvetica", "Arial", sans-serif
-  font-size: 16pt
+html
+  background: image-url("bg.jpg") no-repeat right center fixed
+  background-size: cover
 
-h1
-  font-size: 3em
+#strip
+  background: #fffaf0
+  font: 36px "Futura", sans-serif
+  position: absolute
+  color: #3d2c24
 
-h2
-  font-size: 2em
+@media (min-width:641px)
+  #strip
+    display: table
+    height: 100%
+    left: 20%
+    padding: 0 1em
+    p
+      display: table-cell
+      vertical-align: middle
 
-h3
-  font-size: 1.5em
-
+@media (max-width:640px)
+  #strip
+    text-align: center
+    width: 100%

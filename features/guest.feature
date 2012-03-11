@@ -7,12 +7,6 @@ Feature: Guest
   Background:
     When I visit the site
 
-  Scenario: Names
-    Then I should see Beth
-    And I should see Justin
-
   Scenario: Date
-    Then I should see January 5th, 2013
+    Then I should see 1 • 5 • 13
 
-  Scenario: Location
-    Then I should see Merion, PA
