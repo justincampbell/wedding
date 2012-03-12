@@ -3,7 +3,7 @@
 
 html
   background: image-url("bg-high.jpg") no-repeat right center fixed
-  @media (max-width:640px)
+  @media (max-width: 640px)
     background-image: image-url("bg-low.jpg")
   @include background-size(cover)
 
@@ -12,16 +12,16 @@ html
   color: #3d2c24
   font: 36px "Futura", sans-serif
   position: absolute
-  @media (orientation:landscape)
+  @media (orientation: landscape)
     display: table
     height: 100%
     left: 15%
     padding: 0 1em
-    @media (max-width:640px)
+    @media (max-width: 640px)
       font-size: 18px
     p
       display: table-cell
       vertical-align: middle
-  @media (orientation:portrait)
+  @media (orientation: portrait)
     text-align: center
     width: 100%
