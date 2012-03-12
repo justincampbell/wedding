@@ -11,17 +11,19 @@ html
   position: absolute
   color: #3d2c24
 
-@media (min-width:641px)
+@media (orientation:landscape)
   #strip
     display: table
     height: 100%
-    left: 20%
+    left: 15%
     padding: 0 1em
+    @media (max-width:640px)
+      font-size: 18px
     p
       display: table-cell
       vertical-align: middle
 
-@media (max-width:640px)
+@media (orientation:portrait)
   #strip
     text-align: center
     width: 100%
