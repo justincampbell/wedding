@@ -2,9 +2,11 @@
 @import reset
 
 html
-  background: image-url("bg-high.jpg") no-repeat right center fixed
+  background: image-url("bg-med.jpg") no-repeat right center fixed
   @media (max-width: 640px)
     background-image: image-url("bg-low.jpg")
+  @media (min-width: 1281px)
+    background-image: image-url("bg-high.jpg")
   @include background-size(cover)
 
 #strip
