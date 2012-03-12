@@ -1,7 +1,11 @@
 @import bourbon
 @import reset
 
+$brown: #3d2c24
+$cream: #fffaf0
+
 html
+  background-color: $brown
   background: image-url("bg-med.jpg") no-repeat right center fixed
   @media (max-width: 640px)
     background-image: image-url("bg-low.jpg")
@@ -10,8 +14,8 @@ html
   @include background-size(cover)
 
 #strip
-  background: #fffaf0
-  color: #3d2c24
+  background: $cream
+  color: $brown
   font: 36px "Futura", sans-serif
   position: absolute
   @media (orientation: landscape)
