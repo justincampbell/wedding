@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Beth and Justin</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= csrf_meta_tags %>
-  <meta name="viewport" content="width=device-width">
-</head>
-<body>
-
-<%= yield %>
-
-  <%= javascript_include_tag "application" %>
-  <%= render "shared/ga" %>
-</body>
+  <head>
+    <title>Beth and Justin</title>
+    <%= stylesheet_link_tag :application, media: :all %>
+    <%= tag :meta, name: :viewport, content: 'width=device-width' %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <%= yield %>
+    <%= javascript_include_tag :application %>
+    <%= render 'shared/ga' %>
+  </body>
 </html>
