@@ -22,8 +22,28 @@ html
   left: 15%
   padding: 0 1em
   @media (max-width: 640px)
-    left: 10%
-    font-size: 18px
-  p
+    background: rgba($cream, 0.75)
+    left: 0
+    width: 100%
+  div
     display: table-cell
+    text-align: center
     vertical-align: middle
+    form
+      font-size: 14px
+      margin-top: 3em
+      width: 100%
+      input
+        padding: 0.5em
+        @include border-radius(0.5em)
+        margin-top: 1em
+      .email
+        border: 1px solid $brown
+      .button
+        background: $brown
+        border: 0 none
+        color: $cream
+        cursor: pointer
+        font-weight: bold
+        &:hover
+          background-color: lighten($brown, 25%)
