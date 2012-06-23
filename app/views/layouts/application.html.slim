@@ -1,0 +1,18 @@
+doctype html
+html
+  head
+    title Beth and Justin
+    = stylesheet_link_tag :application, media: :all
+    = tag :meta, name: :viewport, content: 'width=device-width'
+    = csrf_meta_tags
+  body
+    ul
+      = link_to "About Us", us_path
+      = link_to "Our Party", party_path
+      = link_to "Location", location_path
+      = link_to "Registry", registry_path
+      = link_to "Travel", travel_path
+    = yield
+    = javascript_include_tag :application
+    = render 'shared/ga'
+

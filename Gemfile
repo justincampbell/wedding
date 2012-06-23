@@ -6,6 +6,7 @@ gem 'heroku'
 gem 'jquery-rails'
 gem 'json'
 gem 'newrelic_rpm'
+gem 'slim'
 gem 'thin'
 
 group :assets do
