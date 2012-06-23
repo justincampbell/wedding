@@ -1,6 +1,6 @@
 source :rubygems
 
-gem 'rails', '3.2.3'
+gem 'rails', '3.2.6'
 
 gem 'heroku'
 gem 'jquery-rails'
@@ -10,8 +10,8 @@ gem 'thin'
 
 group :assets do
   gem 'bourbon'
-  gem 'sass-rails',   '~> 3.2'
-  gem 'coffee-rails', '~> 3.2'
+  gem 'sass-rails'
+  gem 'coffee-rails'
   gem 'uglifier'
 end
 
@@ -30,10 +30,10 @@ group :development, :test do
     gem 'guard-bundler'
     gem 'guard-cucumber'
     gem 'guard-rspec'
-  end
 
-  group :darwin do
-    gem 'growl'
-    gem 'rb-fsevent'
+    group :darwin do
+      gem 'growl'
+      gem 'rb-fsevent'
+    end
   end
 end
