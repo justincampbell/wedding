@@ -4,46 +4,7 @@
 $brown: #3d2c24
 $cream: #fffaf0
 
-html
-  background: $brown image-url("bg-med.jpg") no-repeat right center fixed
-  @media (max-width: 640px)
-    background-image: image-url("bg-low.jpg")
-  @media (min-width: 1281px)
-    background-image: image-url("bg-high.jpg")
-  @include background-size(cover)
-
-#strip
+body
   background: $cream
   color: $brown
-  font: 36px "Futura", "Arial", sans-serif
-  position: absolute
-  display: table
-  height: 100%
-  left: 15%
-  padding: 0 1em
-  @media (max-width: 640px)
-    background: rgba($cream, 0.75)
-    left: 0
-    width: 100%
-  div
-    display: table-cell
-    text-align: center
-    vertical-align: middle
-    form
-      font-size: 14px
-      margin-top: 3em
-      width: 100%
-      input
-        padding: 0.5em
-        @include border-radius(0.5em)
-        margin-top: 1em
-      .email
-        border: 1px solid $brown
-      .button
-        background: $brown
-        border: 0 none
-        color: $cream
-        cursor: pointer
-        font-weight: bold
-        &:hover
-          background-color: lighten($brown, 25%)
+  font: 16px "Futura", "Arial", sans-serif

@@ -7,6 +7,13 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
+    <ul>
+      <%= link_to "About Us", us_path %>
+      <%= link_to "Our Party", party_path %>
+      <%= link_to "Location", location_path %>
+      <%= link_to "Registry", registry_path %>
+      <%= link_to "Travel", travel_path %>
+    </ul>
     <%= yield %>
     <%= javascript_include_tag :application %>
     <%= render 'shared/ga' %>
