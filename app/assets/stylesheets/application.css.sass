@@ -2,9 +2,85 @@
 @import reset
 
 $brown: #3d2c24
+//$blue:  blue
 $cream: #fffaf0
 
-body
+$lightbrown: lighten($brown, 10)
+
+@mixin shadow
+  @include box-shadow(0px 10px 10px 0px $brown)
+
+@mixin texture-cream
   background: $cream
+
+@mixin rounded-corners
+  @include border-radius(5px)
+
+body
+  background: $lightbrown
   color: $brown
   font: 16px "Futura", "Arial", sans-serif
+
+#container
+  margin: 0 auto
+  width: 960px
+
+#menu
+  @include rounded-corners
+  @include shadow
+  @include texture-cream
+  font-size: 1.4em
+  margin: 100px 0px
+  width: 100%
+  ul
+    padding: 0.5em
+    li
+      display: inline-block
+      margin: auto 0.8em
+      a
+        color: $brown
+        text-decoration: none
+        &:hover
+          color: $blue
+  ul#menu-left
+    float: left
+  ul#menu-right
+    text-align: right
+
+#snowflake
+  background-image: image-url('snowflake-large.png')
+  height: 376px
+  width: 337px
+  margin: -400px auto 10px auto
+
+#date
+  @include border-radius(1em)
+  @include shadow
+  @include texture-cream
+  font-size: 2em
+  margin: -219px auto 10px auto
+  padding-left: 0.5em
+  text-align: center
+  width: 210px
+
+h1, h2, h3, h4
+  padding: 0 0 1em 0
+
+h3
+  font-size: 3em
+
+h4
+  font-size: 1.5em
+
+p
+  padding: 0 0 2em 0
+  text-indent: 2em
+
+#content
+  @include rounded-corners
+  @include shadow
+  @include texture-cream
+  margin: 150px auto
+  min-height: 400px
+  padding: 2em
+
