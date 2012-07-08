@@ -2,10 +2,10 @@
 @import reset
 
 $brown: #3d2c24
-//$blue:  blue
+$blue:  blue
 $cream: #fffaf0
 
-$lightbrown: lighten($brown, 10)
+$lightbrown: lighten($brown, 15)
 
 @mixin shadow
   @include box-shadow(0px 10px 10px 0px $brown)
@@ -17,9 +17,12 @@ $lightbrown: lighten($brown, 10)
   @include border-radius(5px)
 
 body
-  background: $lightbrown
+  @include linear-gradient(top, $lightbrown, $brown)
+  background-attachment: fixed
+  background-repeat: no-repeat
   color: $brown
   font: 16px "Futura", "Arial", sans-serif
+  height: 100%
 
 #container
   margin: 0 auto
@@ -64,7 +67,7 @@ body
   width: 210px
 
 h1, h2, h3, h4
-  padding: 0 0 1em 0
+  padding-bottom: 1em
 
 h3
   font-size: 3em
@@ -73,7 +76,7 @@ h4
   font-size: 1.5em
 
 p
-  padding: 0 0 2em 0
+  padding: 0 1em 2em 1em
   text-indent: 2em
 
 #content
@@ -82,5 +85,14 @@ p
   @include texture-cream
   margin: 150px auto
   min-height: 400px
-  padding: 2em
+  padding: 2em 2em 4em 2em
 
+.registries
+  text-align: center
+  a
+    margin: 2em
+    img
+      border: 5px solid $brown
+
+.read-more
+  text-align: right
