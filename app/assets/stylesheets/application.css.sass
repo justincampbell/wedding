@@ -16,10 +16,15 @@ $background-light: lighten($background, 15)
 $background-dark: darken($background, 15)
 $text-light: lighten($text, 30)
 
+$fg-column: 60px
+$fg-gutter: 25px
+$fg-max-columns: 12
+
 @mixin shadow
   @include box-shadow(0px 10px 10px 0px $background)
 
 @mixin rounded-corners
+  //@media all and (min-width: 768px)
   @include border-radius(5px)
 
 body
@@ -29,20 +34,25 @@ body
   color: $text
   font: 16px "Futura", "Arial", sans-serif
   height: 100%
+  padding: flex-gutter()
 
 #container
   margin: 0 auto
-  width: 960px
+  max-width: 1280px
+  width: flex-grid(12)
 
 #menu
-  @include rounded-corners
-  @include shadow
+  +rounded-corners
+  +shadow
   background: $wrapper
   font-size: 1.4em
-  margin: 100px 0px
+  margin: 1em 0
+  text-align: center
   width: 100%
+  +clearfix
   ul
-    padding: 0.5em
+    display: inline-block
+    padding: 0.5em 0
     li
       display: inline-block
       margin: auto 0.8em
@@ -52,89 +62,103 @@ body
         &:hover
           color: $text-highlight
   ul#menu-left
-    float: left
+    text-align: center
+    @media all and (min-width: 768px)
+      float: left
   ul#menu-right
-    text-align: right
+    text-align: center
+    @media all and (min-width: 768px)
+      float: right
+      text-align: right
+  @media all and (min-width: 768px)
+    margin: 70px auto
 
 #snowflake
-  background-image: image-url('snowflake-large.png')
-  height: 376px
-  width: 337px
-  margin: -400px auto 10px auto
+  @media all and (min-width: 768px)
+    background-image: image-url('snowflake-large.png')
+    height: 376px
+    margin: -400px auto 10px auto
+    width: 337px
 
 #date
-  @include border-radius(1em)
-  @include shadow
+  +border-radius(1em)
+  +shadow
   background: $wrapper
   font-size: 2em
-  margin: -219px auto 10px auto
+  margin: flex-gutter() auto
   padding-left: 0.5em
+  position: relative
   text-align: center
   width: 210px
 
 h1, h2, h3, h4
-  padding-bottom: 1em
+  padding: 0.5em flex-gutter()
 
-h3
-  font-size: 3em
+h1
+  font-size: 2em
+  text-align: center
+  @media all and (min-width: 768px)
+    font-size: 3em
+    text-align: left
 
-h4
+h2
   font-size: 1.5em
 
 p
-  padding: 0 1em 2em 1em
+  padding: 0 flex-gutter() 2em
   text-indent: 2em
 
 #content
-  @include rounded-corners
-  @include shadow
+  +rounded-corners
+  +shadow
   background: $wrapper
   float: left
-  margin: 125px auto
+  margin: 0 auto
   min-height: 400px
-  padding: 2em 2em 4em 2em
-  width: 896px
+  width: 100%
 
 .registries
   text-align: center
   a
-    margin: 2em
+    display: block
+    margin: 0 flex-gutter() 2em
     img
       border: 5px solid $background
+    @media all and (min-width: 768px)
+      +inline-block
 
 .read-more
   text-align: right
 
+.row
+  +clearfix
+
 .party
   .person
-    float: left
-    margin-right: 2em
-    width: 432px
-    div
-      font-size: 2em
-      margin-bottom: 0em
+    +clearfix
+    text-align: center
     img
-      margin-left: -2em
-      width: 464px
+      width: 100%
+    .name
+      float: left
+    .name, .title
+      font-size: 2em
+      margin-bottom: .5em
+      padding: 0 flex-gutter()
     .title
       color: $text-light
-    &.left
-      .name
-        float: left
-      .title
-        text-align: right
-    &.right
-      img
-        margin-left: 0
-      .name
-        text-align: right
-      .title
-        float: left
-      margin-right: 0
+      float: right
     p
-      clear: left
+      clear: both
       display: block
       font-family: $helvetica
-      padding: 0
+      padding: 0 flex-gutter()
       margin: 1em 0 2em
+      text-align: left
+    @media all and (min-width: 768px)
+      &.left
+        float: left
+      &.right
+        float: right
+      width: flex-grid(6)
 
