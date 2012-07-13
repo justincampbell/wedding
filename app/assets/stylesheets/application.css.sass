@@ -17,7 +17,7 @@ $background-dark: darken($background, 15)
 $text-light: lighten($text, 30)
 
 $fg-column: 60px
-$fg-gutter: 25px
+$fg-gutter: 40px
 $fg-max-columns: 12
 
 @mixin shadow
@@ -37,18 +37,18 @@ body
 
 #container
   margin: 0 auto
-  max-width: 1280px
+  max-width: 1140px
   width: flex-grid(12)
 
 #menu
+  +clearfix
   +rounded-corners
   +shadow
   background: $wrapper
-  font-size: 1.4em
+  font-size: 1.25em
   margin: 1em 0
   text-align: center
   width: 100%
-  +clearfix
   ul
     display: inline-block
     padding: 0.5em 0
@@ -70,7 +70,8 @@ body
       float: right
       text-align: right
   @media all and (min-width: 768px)
-    margin: 70px auto
+    font-size: 1.5em
+    margin: 67px auto
 
 #snowflake
   @media all and (min-width: 768px)
