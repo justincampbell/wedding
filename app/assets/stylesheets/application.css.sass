@@ -2,9 +2,167 @@
 @import reset
 
 $brown: #3d2c24
+$blue:  #0066ff
 $cream: #fffaf0
+$white: #fafaff
+$gray:  #888
+
+$background: $brown
+$wrapper: $white
+$text: $brown
+$text-highlight: $blue
+
+$background-light: lighten($background, 15)
+$background-dark: darken($background, 15)
+$text-light: lighten($text, 30)
+
+$fg-column: 60px
+$fg-gutter: 40px
+$fg-max-columns: 12
+
+@mixin shadow
+  @include box-shadow(0px 3px 3px 0px black)
+
+@mixin rounded-corners
+  @include border-radius(5px)
 
 body
-  background: $cream
-  color: $brown
+  background: $background
+  background: url(http://farm6.staticflickr.com/5288/5300628724_aa0e67caca_b_d.jpg) no-repeat center center fixed
+  background-size: cover
+  color: $text
   font: 16px "Futura", "Arial", sans-serif
+  height: 100%
+  padding: flex-gutter()
+
+#container
+  margin: 0 auto
+  max-width: 1140px
+  width: flex-grid(12)
+
+#menu
+  +clearfix
+  +rounded-corners
+  +shadow
+  background: $wrapper
+  font-size: 1.25em
+  margin: 1em 0
+  text-align: center
+  width: 100%
+  ul
+    display: inline-block
+    padding: 0.5em 0
+    li
+      display: inline-block
+      margin: auto 0.8em
+      a
+        color: $text
+        text-decoration: none
+        &:hover
+          color: $text-highlight
+  ul#menu-left
+    text-align: center
+    @media all and (min-width: 768px)
+      float: left
+  ul#menu-right
+    text-align: center
+    @media all and (min-width: 768px)
+      float: right
+      text-align: right
+  @media all and (min-width: 768px)
+    font-size: 1.5em
+    margin: 67px auto
+
+#snowflake
+  @media all and (min-width: 768px)
+    background-image: image-url('snowflake-large.png')
+    height: 376px
+    margin: -400px auto 10px auto
+    width: 337px
+
+#date
+  +border-radius(1em)
+  +shadow
+  background: $wrapper
+  font-size: 2em
+  margin: flex-gutter() auto
+  padding-left: 0.5em
+  position: relative
+  text-align: center
+  width: 210px
+
+h1, h2, h3, h4
+  padding: 0.5em flex-gutter()
+
+h1
+  font-size: 2em
+  text-align: center
+  @media all and (min-width: 768px)
+    font-size: 3em
+    text-align: left
+
+h2
+  font-size: 1.5em
+
+p
+  padding: 0 flex-gutter() 2em
+  text-indent: 2em
+
+#content
+  +rounded-corners
+  +shadow
+  background: $wrapper
+  float: left
+  margin: 0 auto
+  min-height: 400px
+  width: 100%
+
+.registries
+  text-align: center
+  a
+    display: block
+    margin: 0 flex-gutter() 2em
+    img
+      border: 5px solid $background
+    @media all and (min-width: 768px)
+      +inline-block
+
+.read-more
+  text-align: right
+
+.row
+  +clearfix
+
+.party
+  .person
+    +clearfix
+    text-align: center
+    img
+      width: 100%
+    .name
+      float: left
+    .name, .title
+      font-size: 2em
+      margin-bottom: .5em
+      padding: 0 flex-gutter()
+    .title
+      color: $text-light
+      float: right
+    p
+      clear: both
+      display: block
+      font-family: $helvetica
+      padding: 0 flex-gutter()
+      margin: 1em 0 2em
+      text-align: left
+    @media all and (min-width: 768px)
+      &.left
+        float: left
+      &.right
+        float: right
+        .title
+          float: left
+        .name
+          float: right
+      width: flex-grid(6)
+
