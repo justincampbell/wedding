@@ -66,6 +66,7 @@ GEM
     excon (0.14.3)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    fabrication (2.2.2)
     ffi (1.0.11)
     gherkin (2.11.1)
       json (>= 1.4.6)
@@ -205,6 +206,7 @@ DEPENDENCIES
   coffee-rails
   cucumber-rails
   database_cleaner
+  fabrication
   growl
   guard-bundler
   guard-cucumber
