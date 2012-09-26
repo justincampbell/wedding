@@ -1,9 +1,23 @@
+Given /^I am (\w+) (\w+) from (\d+)$/ do |first_name, last_name, zip_code|
+  Fabricate :guest,
+    first_name: first_name,
+    last_name: last_name,
+    zip_code: zip_code
+end
+
 When /^I visit the site$/ do
   visit root_path
 end
 
 When /^(?:|I )click "(.+)"$/ do |link|
   click_link link
+end
+
+When /^(?:|I )sign in (as|with) "(\w+)\/(\d+)"$/ do |last_name, zip_code|
+  fill_in "Last name", with: last_name
+  fill_in "Zip code", with: zip_code
+
+  click_link "Sign In"
 end
 
 Then /^(?:|I )should see paragraphs$/ do

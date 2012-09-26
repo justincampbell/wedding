@@ -17,8 +17,12 @@ html
           ul#menu-right
             li= link_to "Registry", registry_path
             li= link_to "Travel", travel_path
+            li= link_to "RSVP", rsvp_path
         #snowflake
       #content
+        - flash.each do |type, message|
+          = content_tag :div, class: type do
+            = message
         = yield
     = javascript_include_tag :application
     = render 'shared/ga'
