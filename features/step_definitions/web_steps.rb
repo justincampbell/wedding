@@ -33,6 +33,12 @@ Then /^(?:|I )should see (?:a|an) "(.+)" section$/ do |section|
   page.should have_content(section)
 end
 
+Then /^(?:|I )should see images with links$/ do
+  within 'a[target=_blank]' do
+    page.should have_selector 'img'
+  end
+end
+
 Then /show me the page/ do
   save_and_open_page
 end
