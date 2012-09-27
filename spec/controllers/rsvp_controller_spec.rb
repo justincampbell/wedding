@@ -32,11 +32,13 @@ describe RsvpController do
   end
 
   describe "#sign_in POST" do
+    let(:first_name) { nil }
     let(:last_name) { nil }
     let(:zip_code) { nil }
 
     before :each do
       post :sign_in,
+        first_name: first_name,
         last_name: last_name,
         zip_code: zip_code
     end
@@ -44,6 +46,7 @@ describe RsvpController do
     it { flash[:alert].should be_nil }
 
     context "when signing in with a valid guest" do
+      let(:first_name) { guest.first_name }
       let(:last_name) { guest.last_name }
       let(:zip_code) { guest.zip_code }
 
