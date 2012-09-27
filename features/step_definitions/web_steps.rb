@@ -13,7 +13,8 @@ When /^(?:|I )click "(.+)"$/ do |link|
   click_link link
 end
 
-When /^(?:|I )sign in (as|with) "(\w+)\/(\d+)"$/ do |last_name, zip_code|
+When /^(?:|I )sign in (as|with) "(\w+)\s(\w+)\/(\d+)"$/ do |first_name, last_name, zip_code|
+  fill_in "First name", with: first_name
   fill_in "Last name", with: last_name
   fill_in "Zip code", with: zip_code
 

@@ -1,4 +1,6 @@
 = form_tag sign_in_path, method: :post do
+  = label_tag :first_name
+  = text_field_tag :first_name
   = label_tag :last_name
   = text_field_tag :last_name
   = label_tag :zip_code
