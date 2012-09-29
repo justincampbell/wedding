@@ -4,22 +4,24 @@ Feature: Guest
   As a guest
   I want to see information about the wedding
 
-  Scenario: Date
-    When I visit the site
-    Then I should see Beth
-    And I should see Justin
-    And I should see 1 • 5 • 13
+  Background:
+    Given I visit the site
 
-  Scenario: About Us
-    When I click "About Us"
+  Scenario: Names and Date
+    Then I should see "Beth"
+    And I should see "Justin"
+    And I should see "1 • 5 • 13"
+
+  Scenario: Us
+    When I click "Us"
     Then I should see paragraphs
 
-  Scenario: Our Party
-    When I click "Our Party"
+  Scenario: Party
+    When I click "Party"
     Then I should see paragraphs
 
-  Scenario: Location
-    When I click "Location"
+  Scenario: Venue
+    When I click "Venue"
     Then I should see paragraphs
 
   Scenario: Registry
@@ -28,7 +30,7 @@ Feature: Guest
 
   Scenario: Travel
     When I click "Travel"
-    Then I should see a "Hotel" section
-    And I should see a "Direction" section
-    And I should see an "Activities" section
+    Then I should see a "Directions" section
+    And I should see a "Hotel" section
+    And I should see a "Flights" section
 
