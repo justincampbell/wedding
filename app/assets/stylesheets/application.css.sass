@@ -27,16 +27,15 @@ $fg-max-columns: 12
 $script: 'Alex Brush', cursive
 
 @mixin shadow
-  @include box-shadow(0px 3px 3px 0px black)
+  +box-shadow(0px 3px 3px 0px black)
 
 @mixin rounded-corners
-  @include border-radius(8px)
+  +border-radius(8px)
 
 body
   background: $background
   color: $text
-  font: 16px "Futura", "Arial", sans-serif
-  // padding: flex-gutter()
+  font: 62.5% "Futura", "Arial", sans-serif
 
 .container
   margin: 0 auto
@@ -47,28 +46,40 @@ nav
   background: $nav-background
 
 .menu
-  font-size: 1.25em
+  font-size: 2em
+  +shadow
+  position: relative
   ul
-    padding: 0.5em 0
-    margin-top: -145px
+    padding: 0.5em
+    margin-top: -310px
     -webkit-transition: margin 1s
     &.expanded
       margin-top: 0
     li
+      &:after
+        +linear-gradient(left, lighten($nav-background, 15) , $nav-background)
+        content: ""
+        height: 2px
+        width: 100%
+        display: block
+      a
+        padding: .75em 1em
+        
   a
     color: $nav-color
     text-decoration: none
+    display: block
 
 .menu-button
   float: right
   margin-right: 5%
   a
-    display: block
     background: $nav-background
     width: 80px
     padding: 0px 10px 4px
     text-align: center
     +border-radius(0 0 8px 8px)
+    +shadow
 
 .content-wrap
   background: $wrapper
@@ -80,21 +91,20 @@ nav
 
 h1, h2, h3, h4
   font-family: $script
-  padding: 0.5em flex-gutter()
+  padding: 0 flex-gutter()
   color: $header-color
 
 h1
-  font-size: 2em
-  @media all and (min-width: 768px)
-    font-size: 3em
-    text-align: left
+  font-size: 4.25em
+  text-align: center
 
 h2
-  font-size: 1.5em
+  font-size: 2.4em
 
 p
   padding: 0 flex-gutter() 2em
   text-indent: 2em
+  font-size: 1.6em
 
 .content
   margin: 0 auto
