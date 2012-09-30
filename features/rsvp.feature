@@ -6,6 +6,7 @@ Feature: RSVP
     And I click "RSVP"
 
   Scenario: Login
-    When I sign in as "Doe/12345"
-    Then I should see my party
+    When I sign in as John Doe from 12345
+    Then I should see "Doe Party"
+    And I should see my party
 

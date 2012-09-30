@@ -1,17 +1,11 @@
 class Party
-  attr_accessor :last_name
-  attr_accessor :zip_code
+  attr_accessor :name
 
-  def initialize(options)
-    self.last_name = options[:last_name]
-    self.zip_code = options[:zip_code]
+  def initialize(name)
+    self.name = name
   end
 
   def members
-    Guest.where last_name: name, zip_code: zip_code
-  end
-
-  def name
-    last_name
+    Guest.where party_name: name
   end
 end

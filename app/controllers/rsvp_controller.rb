@@ -3,6 +3,7 @@ class RsvpController < ApplicationController
 
   def index
     @guest = Guest.find session[:guest_id]
+    @party = @guest.party
   end
 
   def sign_in

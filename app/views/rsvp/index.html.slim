@@ -1,1 +1,4 @@
-= @guest.inspect
+p Signed in as #{@guest.full_name}
+p Managing the #{@party.name} Party
+- @party.members.each do |guest|
+  p = guest.full_name
