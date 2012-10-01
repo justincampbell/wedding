@@ -1,5 +1,5 @@
 Given /^I am (\w+) (\w+) from (\d+)$/ do |first_name, last_name, zip_code|
-  Fabricate :guest,
+  Guest.create party: Party.find_or_create_by_name(last_name),
     first_name: first_name,
     last_name: last_name,
     zip_code: zip_code

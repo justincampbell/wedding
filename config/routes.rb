@@ -7,6 +7,7 @@ Wedding::Application.routes.draw do
   get 'travel',   to: 'pages#travel'
 
   get 'rsvp', to: 'rsvp#index'
+  put 'rsvp', to: 'rsvp#update', as: :rsvp_update
   get 'rsvp/sign_in', to: 'rsvp#sign_in', as: :sign_in
   post 'rsvp/sign_in', to: 'rsvp#sign_in', as: :submit_sign_in
 end

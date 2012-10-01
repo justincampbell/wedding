@@ -8,5 +8,5 @@ Feature: RSVP
   Scenario: Login
     When I sign in as John Doe from 12345
     Then I should see "Doe Party"
-    And I should see my party
+    And I should see "John Doe"
 

@@ -1,4 +1,4 @@
 require 'spec_helper'
 
-describe Party do
+describe Rsvp do
 end

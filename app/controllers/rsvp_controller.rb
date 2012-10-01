@@ -2,8 +2,15 @@ class RsvpController < ApplicationController
   before_filter :ensure_signed_in, except: :sign_in
 
   def index
-    @guest = Guest.find session[:guest_id]
+    @guest = current_guest
     @party = @guest.party
+  end
+
+  def update
+    @guest = current_guest
+    @guest.party.update_attributes params[:party]
+
+    redirect_to :rsvp, alert: "Got it, thanks!"
   end
 
   def sign_in

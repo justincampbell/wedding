@@ -1,4 +1,28 @@
-p Signed in as #{@guest.full_name}
+p Welcome #{@guest.first_name}
 p Managing the #{@party.name} Party
-- @party.members.each do |guest|
-  p = guest.full_name
+
+= form_for @party, url: rsvp_update_path do |party_form|
+  = party_form.fields_for :guests do |guest_form|
+    h3 = guest_form.object.full_name
+    = guest_form.fields_for :rsvp do |rsvp_form|
+      = rsvp_form.check_box :attending
+      = rsvp_form.label :attending, "Attending?"
+
+      = rsvp_form.radio_button :meal, :steak
+      = rsvp_form.label :meal_steak, "Steak"
+      = rsvp_form.radio_button :meal, :chicken
+      = rsvp_form.label :meal_chicken, "Chicken"
+      = rsvp_form.radio_button :meal, :seafood
+      = rsvp_form.label :meal_seafood, "Seagood"
+      = rsvp_form.radio_button :meal, :vegetarian
+      = rsvp_form.label :meal_steak, "Steak"
+
+      = rsvp_form.check_box :bus
+      = rsvp_form.label :bus, "Bus passenger?"
+
+      = rsvp_form.check_box :rehearsal if true
+      = rsvp_form.label :rehearsal, "Rehearsal Dinner?"
+
+      = rsvp_form.check_box :brunch
+      = rsvp_form.label :brunch, "Brunch?"
+  = party_form.submit

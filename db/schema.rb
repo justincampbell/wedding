@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120929020323) do
+ActiveRecord::Schema.define(:version => 20121001010505) do
 
   create_table "guests", :force => true do |t|
     t.string   "first_name"
@@ -19,7 +19,26 @@ ActiveRecord::Schema.define(:version => 20120929020323) do
     t.string   "zip_code"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-    t.string   "party_name"
+    t.integer  "party_id"
   end
+
+  create_table "parties", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "rsvps", :force => true do |t|
+    t.integer  "guest_id"
+    t.boolean  "attending"
+    t.string   "meal"
+    t.boolean  "bus"
+    t.boolean  "rehearsal"
+    t.boolean  "brunch"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "rsvps", ["guest_id"], :name => "index_rsvps_on_guest_id"
 
 end

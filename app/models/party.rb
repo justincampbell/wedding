@@ -1,11 +1,8 @@
-class Party
-  attr_accessor :name
+class Party < ActiveRecord::Base
+  attr_accessible :name, :guests_attributes
 
-  def initialize(name)
-    self.name = name
-  end
+  has_many :guests
+  has_many :rsvps, through: :guests
 
-  def members
-    Guest.where party_name: name
-  end
+  accepts_nested_attributes_for :guests
 end
