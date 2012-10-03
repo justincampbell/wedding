@@ -5,4 +5,5 @@ Wedding::Application.routes.draw do
   get 'venue',    to: 'pages#venue'
   get 'registry', to: 'pages#registry'
   get 'travel',   to: 'pages#travel'
+
 end

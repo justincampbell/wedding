@@ -5,21 +5,27 @@ html
     = stylesheet_link_tag :application, media: :all
     = tag :meta, name: :viewport, content: 'width=device-width'
     = csrf_meta_tags
+    
   body
-    #container
-      #header
-        #date 1 • 5 • 13
-        #menu
-          ul#menu-left
+    .container
+      nav
+        .menu
+          ul
             li= link_to "Us", root_path
             li= link_to "Party", party_path
             li= link_to "Venue", venue_path
-          ul#menu-right
             li= link_to "Registry", registry_path
             li= link_to "Travel", travel_path
-        #snowflake
-      #content
-        = yield
+          .menu-button
+            a(href='#') menu
+      .content-wrap
+        header
+          .header
+            h1  Beth <span class="amp">&amp;</span> Justin
+            .date 1 • 5 • 13
+        article
+          .content
+            = yield
     = javascript_include_tag :application
     = render 'shared/ga'
 

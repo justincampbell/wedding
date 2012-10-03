@@ -13,3 +13,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+// $().ready{
+//   toggleMenu();
+// }
+
+$('.menu-button a').click(function(){
+ $('.menu ul').toggleClass('expanded');
+});
