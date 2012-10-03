@@ -18,7 +18,6 @@
 //   toggleMenu();
 // }
 
-
 $('.menu-button a').click(function(){
  $('.menu ul').toggleClass('expanded');
 });

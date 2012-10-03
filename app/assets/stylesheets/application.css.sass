@@ -32,6 +32,11 @@ $script: 'Alex Brush', cursive
 @mixin rounded-corners
   +border-radius(8px)
 
+@mixin photo-shadow
+  +box-shadow( 0 0 3px 1px #d1d1d3, inset 0 0 0 2px #fff)
+  img
+    +box-shadow(0 0 0 2px #fff)
+
 body
   background: $background
   color: $text
@@ -99,18 +104,51 @@ h1
   text-align: center
 
 h2
+  font-size: 3em
+
+h3
   font-size: 2.4em
 
 p
   padding: 0 flex-gutter() 2em
-  text-indent: 2em
-  font-size: 1.6em
+  // text-indent: 2em
+  font-size: 1.2em
 
+img
+  max-width: 100%
+
+.header
+  margin-bottom: 2em
+  
 .content
   margin: 0 auto
   min-height: 400px
   width: 100%
 
+//HOME PAGE
+.main-image
+  margin: 0 flex-gutter() 2em
+  background: #f7f7fc
+  padding: 1em
+  +photo-shadow
+
+.info
+  +clearfix
+  margin: 0 flex-gutter() 2em
+
+.head-shot
+  background: #f7f7fc
+  padding: .25em
+  width: 75px
+  height: 75px
+  float: left
+  margin-right: 1em
+  +border-radius(75px)
+  +photo-shadow
+  img
+    +border-radius(75px)
+  
+//REGISTRY
 .registries
   text-align: center
   a
