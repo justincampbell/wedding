@@ -9,6 +9,8 @@ class Guest < ActiveRecord::Base
 
   accepts_nested_attributes_for :rsvp
 
+  store :entitlements, accessors: [:invited_to_rehearsal_dinner]
+
   before_create -> { self.party ||= Party.create name: last_name }
   after_initialize -> { self.rsvp ||= Rsvp.new }
 

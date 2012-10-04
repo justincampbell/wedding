@@ -20,8 +20,9 @@ p Managing the #{@party.name} Party
       = rsvp_form.check_box :bus
       = rsvp_form.label :bus, "Bus passenger?"
 
-      = rsvp_form.check_box :rehearsal if true
-      = rsvp_form.label :rehearsal, "Rehearsal Dinner?"
+      - if guest_form.object.invited_to_rehearsal_dinner
+        = rsvp_form.check_box :rehearsal
+        = rsvp_form.label :rehearsal, "Rehearsal Dinner?"
 
       = rsvp_form.check_box :brunch
       = rsvp_form.label :brunch, "Brunch?"
