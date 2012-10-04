@@ -1,16 +1,20 @@
 @import bourbon
 @import reset
+@import url(http://fonts.googleapis.com/css?family=Alex+Brush)
 
 $brown: #3d2c24
-$blue:  #0066ff
+$blue:  #00539f
 $cream: #fffaf0
 $white: #fafaff
 $gray:  #888
 
-$background: $brown
+$background: $cream
+$nav-background: $brown
 $wrapper: $white
 $text: $brown
 $text-highlight: $blue
+$nav-color: $white
+$header-color: $blue
 
 $background-light: lighten($background, 15)
 $background-dark: darken($background, 15)
@@ -20,103 +24,131 @@ $fg-column: 60px
 $fg-gutter: 40px
 $fg-max-columns: 12
 
+$script: 'Alex Brush', cursive
+
 @mixin shadow
-  @include box-shadow(0px 3px 3px 0px black)
+  +box-shadow(0px 3px 3px 0px black)
 
 @mixin rounded-corners
-  @include border-radius(5px)
+  +border-radius(8px)
+
+@mixin photo-shadow
+  +box-shadow( 0 0 3px 1px #d1d1d3, inset 0 0 0 2px #fff)
+  img
+    +box-shadow(0 0 0 2px #fff)
 
 body
   background: $background
-  background: url(http://farm6.staticflickr.com/5288/5300628724_aa0e67caca_b_d.jpg) no-repeat center center fixed
-  background-size: cover
   color: $text
-  font: 16px "Futura", "Arial", sans-serif
-  height: 100%
-  padding: flex-gutter()
+  font: 62.5% "Futura", "Arial", sans-serif
 
-#container
+.container
   margin: 0 auto
   max-width: 1140px
   width: flex-grid(12)
 
-#menu
-  +clearfix
-  +rounded-corners
-  +shadow
-  background: $wrapper
-  font-size: 1.25em
-  margin: 1em 0
-  text-align: center
-  width: 100%
-  ul
-    display: inline-block
-    padding: 0.5em 0
-    li
-      display: inline-block
-      margin: auto 0.8em
-      a
-        color: $text
-        text-decoration: none
-        &:hover
-          color: $text-highlight
-  ul#menu-left
-    text-align: center
-    @media all and (min-width: 768px)
-      float: left
-  ul#menu-right
-    text-align: center
-    @media all and (min-width: 768px)
-      float: right
-      text-align: right
-  @media all and (min-width: 768px)
-    font-size: 1.5em
-    margin: 67px auto
+nav
+  background: $nav-background
 
-#snowflake
-  @media all and (min-width: 768px)
-    background-image: image-url('snowflake-large.png')
-    height: 376px
-    margin: -400px auto 10px auto
-    width: 337px
-
-#date
-  +border-radius(1em)
-  +shadow
-  background: $wrapper
+.menu
   font-size: 2em
-  margin: flex-gutter() auto
-  padding-left: 0.5em
+  +shadow
   position: relative
+  ul
+    padding: 0.5em
+    margin-top: -310px
+    -webkit-transition: margin 1s
+    &.expanded
+      margin-top: 0
+    li
+      &:after
+        +linear-gradient(left, lighten($nav-background, 15) , $nav-background)
+        content: ""
+        height: 2px
+        width: 100%
+        display: block
+      a
+        padding: .75em 1em
+        
+  a
+    color: $nav-color
+    text-decoration: none
+    display: block
+
+.menu-button
+  float: right
+  margin-right: 5%
+  a
+    background: $nav-background
+    width: 80px
+    padding: 0px 10px 4px
+    text-align: center
+    +border-radius(0 0 8px 8px)
+    +shadow
+
+.content-wrap
+  background: $wrapper
+  padding: 40px 0 0
+
+.date
+  font-size: 2em
   text-align: center
-  width: 210px
 
 h1, h2, h3, h4
-  padding: 0.5em flex-gutter()
+  font-family: $script
+  padding: 0 flex-gutter()
+  color: $header-color
 
 h1
-  font-size: 2em
+  font-size: 4.25em
   text-align: center
-  @media all and (min-width: 768px)
-    font-size: 3em
-    text-align: left
 
 h2
-  font-size: 1.5em
+  font-size: 3em
+
+h3
+  font-size: 2.4em
 
 p
   padding: 0 flex-gutter() 2em
-  text-indent: 2em
+  // text-indent: 2em
+  font-size: 1.2em
 
-#content
-  +rounded-corners
-  +shadow
-  background: $wrapper
-  float: left
+img
+  max-width: 100%
+
+.header
+  margin-bottom: 2em
+  
+.content
   margin: 0 auto
   min-height: 400px
   width: 100%
 
+//HOME PAGE
+.main-image
+  margin: 0 flex-gutter() 2em
+  background: #f7f7fc
+  padding: 1em
+  +photo-shadow
+
+.info
+  +clearfix
+  margin: 0 flex-gutter() 2em
+
+.head-shot
+  background: #f7f7fc
+  padding: .25em
+  width: 75px
+  height: 75px
+  float: left
+  margin-right: 1em
+  +border-radius(75px)
+  +photo-shadow
+  img
+    +border-radius(75px)
+  
+//REGISTRY
 .registries
   text-align: center
   a
