@@ -1,0 +1,14 @@
+.menu
+  +shadow
+  ul
+    -webkit-transition: margin 1s
+    margin-top: -310px
+    &.expanded
+      margin-top: 0
+    li
+      &:after
+        +linear-gradient(left, lighten($nav-background, 15) , $nav-background)
+        content: ""
+        height: 2px
+        width: 100%
+        display: block

@@ -7,25 +7,25 @@ html
     = csrf_meta_tags
     
   body
-    .container
-      nav
-        .menu
-          ul
-            li= link_to "Us", root_path
-            li= link_to "Party", party_path
-            li= link_to "Venue", venue_path
-            li= link_to "Registry", registry_path
-            li= link_to "Travel", travel_path
-          .menu-button
-            a(href='#') menu
-      .content-wrap
-        header
-          .header
-            h1  Beth <span class="amp">&amp;</span> Justin
-            .date 1 • 5 • 13
-        article
-          .content
-            = yield
+    nav
+      .menu.container
+        ul
+          li= link_to "Us", root_path
+          li= link_to "Party", party_path
+          li= link_to "Venue", venue_path
+          li= link_to "Registry", registry_path
+          li= link_to "Travel", travel_path
+        .menu-button
+          a(href='#') menu
+          
+    .content-wrap.container
+      header
+        .header
+          h1  Beth <span class="amp">&amp;</span> Justin
+          .date 1 • 5 • 13
+      article
+        .content
+          = yield
     = javascript_include_tag :application
     = render 'shared/ga'
 

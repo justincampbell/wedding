@@ -13,22 +13,10 @@ nav
 
 .menu
   font-size: 2em
-  +shadow
   position: relative
   ul
     padding: 0.5em
-    margin-top: -310px
-    @media all and (max-width: 768px)
-      -webkit-transition: margin 1s
-      &.expanded
-        margin-top: 0
     li
-      &:after
-        +linear-gradient(left, lighten($nav-background, 15) , $nav-background)
-        content: ""
-        height: 2px
-        width: 100%
-        display: block
       a
         padding: .75em 1em
         
