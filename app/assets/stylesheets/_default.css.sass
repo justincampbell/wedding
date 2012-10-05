@@ -1,0 +1,138 @@
+body
+  background: $background
+  color: $text
+  font: 62.5% "Futura", "Arial", sans-serif
+
+.container
+  margin: 0 auto
+  max-width: 1140px
+  width: flex-grid(12)
+
+nav
+  background: $nav-background
+
+.menu
+  font-size: 2em
+  position: relative
+  ul
+    padding: 0.5em
+    li
+      a
+        padding: .75em 1em
+        
+  a
+    color: $nav-color
+    text-decoration: none
+    display: block
+
+.menu-button
+  float: right
+  margin-right: 5%
+  a
+    background: $nav-background
+    width: 80px
+    padding: 0px 10px 4px
+    text-align: center
+    +border-radius(0 0 8px 8px)
+    +shadow
+
+.content-wrap
+  background: $wrapper
+  padding: 40px 0 0
+
+.date
+  font-size: 2em
+  text-align: center
+
+h1, h2, h3, h4
+  font-family: $script
+  padding: 0 flex-gutter()
+  color: $header-color
+
+h1
+  font-size: 4.25em
+  text-align: center
+
+h2
+  font-size: 3em
+
+h3
+  font-size: 2.4em
+
+p
+  padding: 0 flex-gutter() 2em
+  // text-indent: 2em
+  font-size: 1.2em
+
+img
+  max-width: 100%
+
+.header
+  margin-bottom: 2em
+  
+.content
+  margin: 0 auto
+  min-height: 400px
+  width: 100%
+
+//HOME PAGE
+.main-image
+  margin: 0 flex-gutter() 2em
+  background: #f7f7fc
+  padding: 1em
+  +photo-shadow
+
+.info
+  +clearfix
+  margin: 0 flex-gutter() 2em
+
+.head-shot
+  background: #f7f7fc
+  padding: .25em
+  width: 75px
+  height: 75px
+  float: left
+  margin-right: 1em
+  +border-radius(75px)
+  +photo-shadow
+  img
+    +border-radius(75px)
+  
+//REGISTRY
+.registries
+  text-align: center
+  a
+    display: block
+    margin: 0 flex-gutter() 2em
+    img
+      border: 5px solid $background
+
+.read-more
+  text-align: right
+
+.row
+  +clearfix
+
+.party
+  .person
+    +clearfix
+    text-align: center
+    img
+      width: 100%
+    .name
+      float: left
+    .name, .title
+      font-size: 2em
+      margin-bottom: .5em
+      padding: 0 flex-gutter()
+    .title
+      color: $text-light
+      float: right
+    p
+      clear: both
+      display: block
+      font-family: $helvetica
+      padding: 0 flex-gutter()
+      margin: 1em 0 2em
+      text-align: left
+
