@@ -54,6 +54,12 @@ h1
 
 h2
   font-size: 3em
+  &:after
+    content: ""
+    display: block
+    width: 100%
+    height: 2px
+    +linear-gradient(left, $wrapper 0%, #afafb4 20%, #afafb4 80%, $wrapper 100%)
 
 h3
   font-size: 2.4em
@@ -73,6 +79,14 @@ img
   margin: 0 auto
   min-height: 400px
   width: 100%
+
+.seperator
+  &:before
+    content: ""
+    display: block
+    height: 50px
+    +linear-gradient(top, #eeeef3, $wrapper)
+    -webkit-mask-image: -webkit-linear-gradient(left, rgba(0,0,0,0) 5%, rgba(0,0,0,1) 20%, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 95%)
 
 //HOME PAGE
 .main-image
