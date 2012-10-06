@@ -1,7 +1,7 @@
 nav
   border-bottom: 20px solid $blue
   height: 330px
-  background: url('nav_bg.jpg') repeat 0 0 
+  background: url('nav_bg.jpg') repeat 0 0
 
 .menu
   ul
@@ -16,19 +16,42 @@ nav
   display: none
 
 .content-wrap
-  margin-top: -270px
+  margin: -270px auto 80px
   +rounded-corners
-  +box-shadow(0px 0px 10px -2px black)
+  +box-shadow(0px 0px 10px -2px black, inset 0px 50px 80px -50px #eeeef3)
 
 h1
   font-size: 9.5em
   margin-left: .6em
+
+h2, h3
+  font-size: 4.2em
+
+p
+  font-size: 1.6em
 
 .amp
   font-size: 1.47em
   position: relative
   top: 15px
   margin-right: -.2em
+
+.date
+  font-size: 3em
+  margin-top: -.8em
+
+.content
+  width: 90%
+
+.info
+  width: flex-grid(6)
+  float: left
+  &.right
+    margin-left: flex-gutter()
+
+.head-shot
+  width: 150px
+  height: 150px
 
 .person
   width: flex-grid(6)
