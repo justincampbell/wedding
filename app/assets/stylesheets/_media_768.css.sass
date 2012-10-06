@@ -1,10 +1,14 @@
 nav
   border-bottom: 20px solid $blue
-  height: 200px
+  height: 330px
+  background: url('nav_bg.jpg') repeat 0 0 
 
 .menu
   ul
     text-align: right
+    position: relative
+    bottom: -15px
+    font-style: oblique
     li
       +inline-block
 
@@ -12,9 +16,19 @@ nav
   display: none
 
 .content-wrap
-  margin-top: -140px
+  margin-top: -270px
   +rounded-corners
   +box-shadow(0px 0px 10px -2px black)
+
+h1
+  font-size: 9.5em
+  margin-left: .6em
+
+.amp
+  font-size: 1.47em
+  position: relative
+  top: 15px
+  margin-right: -.2em
 
 .person
   width: flex-grid(6)
