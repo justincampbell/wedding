@@ -20,7 +20,7 @@ class Guest < ActiveRecord::Base
     predicate = self
 
     SEARCH_ATTRIBUTES.each do |search_attribute|
-      predicate = predicate.where "#{search_attribute} like '#{params[search_attribute]}'"
+      predicate = predicate.where "#{search_attribute} #{Rails.env.production? ? :ilike : :like} '#{params[search_attribute]}'"
     end
 
     predicate.first
