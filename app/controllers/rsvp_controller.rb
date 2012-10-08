@@ -10,6 +10,8 @@ class RsvpController < ApplicationController
     @guest = current_guest
     @guest.party.update_attributes params[:party]
 
+    RsvpMailer.rsvp(@guest, params[:party]).deliver
+
     redirect_to :rsvp, alert: "Got it, thanks!"
   end
 
