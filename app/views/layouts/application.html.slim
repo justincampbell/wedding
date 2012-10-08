@@ -5,7 +5,7 @@ html
     = stylesheet_link_tag :application, media: :all
     = tag :meta, name: :viewport, content: 'width=device-width'
     = csrf_meta_tags
-    
+
   body
     nav
       .menu.container
@@ -18,7 +18,7 @@ html
           li= link_to "RSVP", rsvp_path
         .menu-button
           a(href='#') menu
-          
+
     .content-wrap.container
       header
         .header
@@ -26,9 +26,6 @@ html
           .date 1 • 5 • 13
       article
         .content
-          - flash.each do |type, message|
-            = content_tag :div, class: type do
-              = message
           = yield
     = javascript_include_tag :application
     = render 'shared/ga'

@@ -14,10 +14,20 @@
 //= require jquery_ujs
 //= require_tree .
 
-// $().ready{
-//   toggleMenu();
-// }
 
 $('.menu-button a').click(function(){
  $('.menu ul').toggleClass('expanded');
 });
+
+
+$().ready(function() {
+  setContentHeight();
+  $(window).resize(function(){
+    setContentHeight();
+  });
+});
+
+function setContentHeight(){
+  $('.content-wrap').css("min-height", ($(window).height() + "px" ));
+
+}
