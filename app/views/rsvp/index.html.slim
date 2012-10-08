@@ -17,6 +17,9 @@ p Managing the #{@party.name} Party
       = rsvp_form.radio_button :meal, :vegetarian
       = rsvp_form.label :meal_steak, "Steak"
 
+      = rsvp_form.text_field :dietary
+      = rsvp_form.label :dietary, "Dietary requirements"
+
       = rsvp_form.check_box :bus
       = rsvp_form.label :bus, "Bus passenger?"
 

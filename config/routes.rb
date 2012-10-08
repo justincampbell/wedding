@@ -10,4 +10,5 @@ Wedding::Application.routes.draw do
   put 'rsvp', to: 'rsvp#update', as: :rsvp_update
   get 'rsvp/sign_in', to: 'rsvp#sign_in', as: :sign_in
   post 'rsvp/sign_in', to: 'rsvp#sign_in', as: :submit_sign_in
+  get 'rsvp/sign_out', to: 'rsvp#sign_out', as: :sign_out
 end

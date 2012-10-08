@@ -10,6 +10,8 @@ class RsvpController < ApplicationController
     @guest = current_guest
     @guest.party.update_attributes params[:party]
 
+    RsvpMailer.rsvp(@guest, params[:party]).deliver
+
     redirect_to :rsvp, alert: "Got it, thanks!"
   end
 
@@ -19,7 +21,7 @@ class RsvpController < ApplicationController
 
       redirect_to :rsvp if @guest
     elsif params[:first_name] and params[:last_name] and params[:zip_code]
-      @guest = Guest.where(params.slice :first_name, :last_name, :zip_code).first
+      @guest = Guest.for_login params.slice(:first_name, :last_name, :zip_code)
 
       if @guest
         session[:guest_id] = @guest.id
@@ -38,10 +40,6 @@ class RsvpController < ApplicationController
   end
 
   private
-
-  def current_guest
-    @current_guest ||= Guest.find session[:guest_id] if session[:guest_id]
-  end
 
   def ensure_signed_in
     redirect_to :sign_in unless current_guest
