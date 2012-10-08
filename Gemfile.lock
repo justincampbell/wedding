@@ -112,6 +112,9 @@ GEM
     netrc (0.7.7)
     newrelic_rpm (3.4.2.1)
     nokogiri (1.5.5)
+    paper_trail (2.6.3)
+      activerecord (~> 3.0)
+      railties (~> 3.0)
     pg (0.14.1)
     polyglot (0.3.3)
     rack (1.4.1)
@@ -209,6 +212,7 @@ DEPENDENCIES
   jquery-rails
   json
   newrelic_rpm
+  paper_trail
   pg
   rails (= 3.2.8)
   rb-fsevent

@@ -39,10 +39,6 @@ class RsvpController < ApplicationController
 
   private
 
-  def current_guest
-    @current_guest ||= Guest.find session[:guest_id] if session[:guest_id]
-  end
-
   def ensure_signed_in
     redirect_to :sign_in unless current_guest
   end
