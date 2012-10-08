@@ -14,6 +14,18 @@ class Guest < ActiveRecord::Base
 
   after_initialize -> { self.rsvp ||= Rsvp.new }
 
+  SEARCH_ATTRIBUTES = %w[first_name last_name zip_code]
+
+  def self.for_login(params)
+    predicate = self
+
+    SEARCH_ATTRIBUTES.each do |search_attribute|
+      predicate = predicate.where "#{search_attribute} like '#{params[search_attribute]}'"
+    end
+
+    predicate.first
+  end
+
   def full_name
     "#{first_name} #{last_name}"
   end

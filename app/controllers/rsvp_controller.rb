@@ -19,7 +19,7 @@ class RsvpController < ApplicationController
 
       redirect_to :rsvp if @guest
     elsif params[:first_name] and params[:last_name] and params[:zip_code]
-      @guest = Guest.where(params.slice :first_name, :last_name, :zip_code).first
+      @guest = Guest.for_login params.slice(:first_name, :last_name, :zip_code)
 
       if @guest
         session[:guest_id] = @guest.id
