@@ -29,5 +29,9 @@ $().ready(function() {
 
 function setContentHeight(){
   $('.content-wrap').css("min-height", ($(window).height() + "px" ));
-
 }
+
+$('#party_guests_attributes_0_rsvp_attributes_attending').click(function(){
+    var chk = $(this);
+    $(this).next($('.attending-content').toggleClass('expanded', chk.attr('checked')));
+})

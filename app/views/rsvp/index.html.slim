@@ -1,32 +1,39 @@
-p Welcome #{@guest.first_name}
-p Managing the #{@party.name} Party
+h2 Welcome #{@guest.first_name} <span class="managing-info">Managing the #{@party.name} Party</span>
 
-= form_for @party, url: rsvp_update_path do |party_form|
-  = party_form.fields_for :guests do |guest_form|
-    h3 = guest_form.object.full_name
-    = guest_form.fields_for :rsvp do |rsvp_form|
-      = rsvp_form.check_box :attending
-      = rsvp_form.label :attending, "Attending?"
-
-      = rsvp_form.radio_button :meal, :steak
-      = rsvp_form.label :meal_steak, "Steak"
-      = rsvp_form.radio_button :meal, :chicken
-      = rsvp_form.label :meal_chicken, "Chicken"
-      = rsvp_form.radio_button :meal, :seafood
-      = rsvp_form.label :meal_seafood, "Seagood"
-      = rsvp_form.radio_button :meal, :vegetarian
-      = rsvp_form.label :meal_steak, "Steak"
-
-      = rsvp_form.text_field :dietary
-      = rsvp_form.label :dietary, "Dietary requirements"
-
-      = rsvp_form.check_box :bus
-      = rsvp_form.label :bus, "Bus passenger?"
-
-      - if guest_form.object.invited_to_rehearsal_dinner
-        = rsvp_form.check_box :rehearsal
-        = rsvp_form.label :rehearsal, "Rehearsal Dinner?"
-
-      = rsvp_form.check_box :brunch
-      = rsvp_form.label :brunch, "Brunch?"
-  = party_form.submit
+.section-shading
+  .section-content
+    = form_for @party, url: rsvp_update_path do |party_form|
+      = party_form.fields_for :guests do |guest_form|
+        h4 = guest_form.object.full_name
+        = guest_form.fields_for :rsvp do |rsvp_form|
+          .formrow
+            = rsvp_form.label :attending, "Attending?"
+            = rsvp_form.check_box :attending
+          .attending-content
+            .formrow
+              = rsvp_form.label :meal_steak, "Steak"
+              = rsvp_form.radio_button :meal, :steak
+            .formrow
+              = rsvp_form.label :meal_chicken, "Chicken"
+              = rsvp_form.radio_button :meal, :chicken
+            .formrow
+              = rsvp_form.label :meal_seafood, "Seafood"
+              = rsvp_form.radio_button :meal, :seafood
+            .formrow
+              = rsvp_form.label :meal_steak, "Steak"
+              = rsvp_form.radio_button :meal, :vegetarian
+            .formrow
+              = rsvp_form.label :dietary, "Dietary requirements"
+              = rsvp_form.text_field :dietary
+            .formrow
+              = rsvp_form.label :bus, "Bus passenger?"
+              = rsvp_form.check_box :bus
+            .formrow
+              - if guest_form.object.invited_to_rehearsal_dinner
+                = rsvp_form.label :rehearsal, "Rehearsal Dinner?"
+                = rsvp_form.check_box :rehearsal
+            .formrow
+              = rsvp_form.label :brunch, "Brunch?"
+              = rsvp_form.check_box :brunch
+          .divider
+      = party_form.submit
