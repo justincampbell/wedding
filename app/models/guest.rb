@@ -14,13 +14,56 @@ class Guest < ActiveRecord::Base
 
   after_initialize -> { self.rsvp ||= Rsvp.new }
 
+  NICKNAMES = [
+    %w[abigale abbe abbie abby],
+    %w[al albert],
+    %w[antonio anthony tony],
+    %w[barbara barb],
+    %w[beth elizabeth liz],
+    %w[betty bett],
+    %w[caroline carolyn carol],
+    %w[catherine cathy],
+    %w[cheryl cheri],
+    %w[christopher chris],
+    %w[curtis curt],
+    %w[dan daniel],
+    %w[dani daniel danielle],
+    %w[david dave],
+    %w[edward ed],
+    %w[gregory greg],
+    %w[jacqueline jackie],
+    %w[janice janet jan],
+    %w[jeffrey jeff],
+    %w[jessica jess],
+    %w[joseph joe],
+    %w[jon john jonathon johnathon],
+    %w[judith judy],
+    %w[katherine katie],
+    %w[louis lou],
+    %w[matthew matt],
+    %w[mike michael],
+    %w[patrick pat],
+    %w[phillip phil],
+    %w[richard rich],
+    %w[robert bob rob],
+    %w[ruth ruthie],
+    %w[samantha sam],
+    %w[stephen steven steve],
+    %w[susan sue],
+    %w[timothy tim timmy],
+    %w[theodore ted],
+    %w[thomas tom],
+    %w[walter walt],
+    %w[william will bill]
+  ]
+
   SEARCH_ATTRIBUTES = %w[first_name last_name zip_code]
 
   def self.for_login(params)
     predicate = self
 
     SEARCH_ATTRIBUTES.each do |search_attribute|
-      predicate = predicate.where "#{search_attribute} #{Rails.env.production? ? :ilike : :like} '#{params[search_attribute]}'"
+      predicate = predicate.where where_query(search_attribute, params[search_attribute])
     end
 
     predicate.first
@@ -28,5 +71,21 @@ class Guest < ActiveRecord::Base
 
   def full_name
     "#{first_name} #{last_name}"
+  end
+
+  private
+
+  def self.like
+    Rails.env.production? ? :ilike : :like
+  end
+
+  def self.nicknames_for_name(name)
+    NICKNAMES.select { |nicknames| nicknames.include? name.downcase }.flatten
+  end
+
+  def self.where_query(field, value)
+    (nicknames_for_name(value) | [value]).map { |string|
+      "#{field} #{like} '#{string}'"
+    }.join(" or ")
   end
 end

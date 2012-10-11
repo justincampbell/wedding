@@ -19,5 +19,15 @@ describe Guest do
 
       it { should == guest }
     end
+
+    context "with a nickname" do
+      let(:guest) { Fabricate :guest, first_name: "Johnathon" }
+
+      before :each do
+        params['first_name'] = "john"
+      end
+
+      it { should == guest }
+    end
   end
 end
