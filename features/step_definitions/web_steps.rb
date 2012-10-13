@@ -21,6 +21,10 @@ When /^(?:|I )sign in (?:as|with) (\w+)\s(\w+) from (\d+)$/ do |first_name, last
   click_button "Sign in"
 end
 
+Then /^I should see an RSVP form$/ do
+  page.should have_selector('form.edit_party')
+end
+
 Then /^(?:|I )should see paragraphs$/ do
   page.should have_selector('p')
 end
