@@ -7,6 +7,6 @@ Feature: RSVP
 
   Scenario: Login
     When I sign in as John Doe from 12345
-    Then I should see "Doe Party"
-    And I should see "John Doe"
+    Then I should see "John Doe"
+    And I should see an RSVP form
 
