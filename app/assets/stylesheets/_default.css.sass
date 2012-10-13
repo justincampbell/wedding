@@ -180,13 +180,13 @@ form
 .section-content
   position: relative
 
-.sign-in
-  margin: 0 auto
-  border: 1px solid #afafb4
-  +rounded-corners
-  padding: 1em 4%
-  background: darken($wrapper, .1)
-  max-width: 320px
+// .sign-in
+//   margin: 0 auto
+//   border: 1px solid #afafb4
+//   +rounded-corners
+//   padding: 1em 4%
+//   background: darken($wrapper, .1)
+//   max-width: 320px
 
 label
   font-size: 1.6em
@@ -219,7 +219,12 @@ input[type="submit"]
     height: auto
 
 form
-  @extend .sign-in
+  margin: 0 auto
+  border: 1px solid #afafb4
+  +rounded-corners
+  padding: 1em 4%
+  background: darken($wrapper, .1)
+  max-width: 320px
   margin: 2em auto
 
 .formrow
@@ -278,6 +283,17 @@ input[type='checkbox'], input[type="radio"]
 //     background-position: 25px
 //     &:after
 //       left: -5px
+
+
+//ALERTS
+.alert
+  margin: 1em flex-gutter() 2em
+  padding: 1em flex-gutter()
+  color: #B94A48
+  background-color: #F2DEDE
+  border-color: #EED3D7
+  font-size: 1.4em
+  +rounded-corners
 
 
 
