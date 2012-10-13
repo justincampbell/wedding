@@ -93,6 +93,7 @@ form
   margin: 0 auto
   min-height: 400px
   width: 100%
+  padding-bottom: 4em
 
 .seperator
   margin: 0 flex-gutter()
@@ -121,6 +122,17 @@ form
   +photo-shadow
   img
     +border-radius(100px)
+
+.content-image
+  text-align: center
+  max-width: flex-grid(12)
+  margin: 0 flex-gutter() 2em
+  +photo-shadow
+  background: #f7f7fc
+  padding: .25em
+  +rounded-corners
+  img
+    +rounded-corners
 
 //REGISTRY
 .registries
