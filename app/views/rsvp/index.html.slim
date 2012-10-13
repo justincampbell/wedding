@@ -9,7 +9,10 @@ h2 Welcome #{@guest.first_name}
           = guest_form.fields_for :rsvp do |rsvp_form|
             .formrow
               = rsvp_form.label :attending, "Attending?"
-              = rsvp_form.check_box :attending, class: 'attending-checkbox'
+              = rsvp_form.label :attending_true, "Yes"
+              = rsvp_form.radio_button :attending, true, class: 'attending-radio'
+              = rsvp_form.label :attending_false, "No"
+              = rsvp_form.radio_button :attending, false, class: 'attending-radio'
             .attending-content class=(guest_form.object.rsvp.attending ? 'expanded' : nil)
               .formrow
                 = rsvp_form.label :meal_steak, "Steak"

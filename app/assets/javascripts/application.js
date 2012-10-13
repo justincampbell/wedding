@@ -31,6 +31,11 @@ function setContentHeight(){
   $('.content-wrap').css("min-height", ($(window).height() + "px" ));
 }
 
-$('.attending-checkbox').click(function() {
-  $(this).parent().siblings('.attending-content').toggleClass('expanded', !!$(this).attr('checked'));
+$('.attending-radio').click(function() {
+  var radio = $(this);
+  var attendingContent = radio.parent().siblings('.attending-content');
+
+  var expanded = radio.attr('value') == "true";
+
+  attendingContent.toggleClass('expanded', expanded);
 })
