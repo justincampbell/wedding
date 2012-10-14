@@ -8,12 +8,16 @@ h2 Welcome #{@guest.first_name}
           h4 = guest_form.object.full_name
           = guest_form.fields_for :rsvp do |rsvp_form|
             .formrow
-              = rsvp_form.label :attending, "Attending?"
+              h5 Attending?
+            .formrow
               = rsvp_form.label :attending_true, "Yes"
               = rsvp_form.radio_button :attending, true, class: 'attending-radio'
+            .formrow
               = rsvp_form.label :attending_false, "No"
               = rsvp_form.radio_button :attending, false, class: 'attending-radio'
             .attending-content class=(guest_form.object.rsvp.attending ? 'expanded' : nil)
+              .formrow
+                h5 Orly? What'll you eat then?
               .formrow
                 = rsvp_form.label :meal_steak, "Steak"
                 = rsvp_form.radio_button :meal, :steak
@@ -30,12 +34,18 @@ h2 Welcome #{@guest.first_name}
                 = rsvp_form.label :dietary, "Dietary requirements"
                 = rsvp_form.text_field :dietary
               .formrow
+                h5 Taking the bus are we?
+              .formrow
                 = rsvp_form.label :bus, "Bus passenger?"
                 = rsvp_form.check_box :bus
-              .formrow
-                - if guest_form.object.invited_to_rehearsal_dinner
+              - if guest_form.object.invited_to_rehearsal_dinner
+                .formrow
+                  h5 Practice makes perfect
+                .formrow
                   = rsvp_form.label :rehearsal, "Rehearsal Dinner?"
                   = rsvp_form.check_box :rehearsal
+              .formrow
+                h5 Can't wait till the reception?
               .formrow
                 = rsvp_form.label :brunch, "Brunch?"
                 = rsvp_form.check_box :brunch
