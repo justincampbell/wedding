@@ -126,16 +126,19 @@ form
   img
     +border-radius(100px)
 
-.content-image
+.content-image, .photo
   text-align: center
   max-width: flex-grid(12)
-  margin: 0 flex-gutter() 2em
+  margin: 0 auto 2em
   +photo-shadow
   background: #f7f7fc
   padding: .25em
   +rounded-corners
   img
     +rounded-corners
+
+.content-image
+  margin: 0 flex-gutter() 2em
 
 //REGISTRY
 .registries
@@ -164,7 +167,6 @@ form
     .name, .title
       font-size: 2em
       margin-bottom: .5em
-      padding: 0 flex-gutter()
     .title
       color: $text-light
       float: right
@@ -172,7 +174,7 @@ form
       clear: both
       display: block
       font-family: $helvetica
-      padding: 0 flex-gutter()
+      padding: 0
       margin: 1em 0 2em
       text-align: left
 
@@ -182,14 +184,6 @@ form
 
 .section-content
   position: relative
-
-// .sign-in
-//   margin: 0 auto
-//   border: 1px solid #afafb4
-//   +rounded-corners
-//   padding: 1em 4%
-//   background: darken($wrapper, .1)
-//   max-width: 320px
 
 label
   font-size: 1.6em
