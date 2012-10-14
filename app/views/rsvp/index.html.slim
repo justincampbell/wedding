@@ -38,10 +38,10 @@ h2 Welcome #{@guest.first_name}
               .formrow
                 = rsvp_form.label :bus, "Bus passenger?"
                 = rsvp_form.check_box :bus
-              .formrow
-                h5 Practice makes perfect
-              .formrow
-                - if guest_form.object.invited_to_rehearsal_dinner
+              - if guest_form.object.invited_to_rehearsal_dinner
+                .formrow
+                  h5 Practice makes perfect
+                .formrow
                   = rsvp_form.label :rehearsal, "Rehearsal Dinner?"
                   = rsvp_form.check_box :rehearsal
               .formrow
