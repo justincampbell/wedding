@@ -8,6 +8,19 @@ body
   max-width: 1200px
   width: flex-grid(12)
 
+a.button
+  +border-radius(5px)
+  +linear-gradient(lighten($blue, 10), $blue 50%)
+  border: none
+  color: $white
+  display: inline-block
+  max-width: 320px
+  padding: 1em
+  margin: 0.5em 0
+  text-align: center
+  text-decoration: none
+  width: 100%
+
 nav
   background: $nav-background
 
@@ -24,6 +37,7 @@ nav
     color: $nav-color
     text-decoration: none
     display: block
+    margin: 0
 
 .menu-button
   float: right
@@ -84,6 +98,8 @@ p
   font-size: 1.2em
   &.classy
     font-style: oblique
+  a
+    font-size: 1.8em
 
 img
   max-width: 100%
@@ -306,3 +322,4 @@ input[type='checkbox'], input[type="radio"]
 .note
   margin-top: -1.5em
   font-size: 1.25em
+

@@ -12,8 +12,9 @@ h2 Travel
       <br />
       (610) 358-9540
 
-    = button_to "Reserve a Hotel Room", "http://hamptoninn.hilton.com/en/hp/groups/personalized/C/CFORDHX-KCB-20121231/index.jhtml?WT.mc_id=POG", method: :get
-    = button_to "Directions", "https://maps.google.com/maps?q=Hampton+Inn-Chadds+Ford,+40+State+Farm+Drive,+Glen+Mills,+PA&hl=en&sll=41.117935,-77.604698&sspn=5.494946,11.634521&oq=hamp&hq=Hampton+Inn-Chadds+Ford,+40+State+Farm+Drive,+Glen+Mills,+PA&radius=15000&t=m&z=13", method: :get
+    p
+      = link_to "Reserve a Hotel Room", "http://hamptoninn.hilton.com/en/hp/groups/personalized/C/CFORDHX-KCB-20121231/index.jhtml?WT.mc_id=POG", class: :button
+      = link_to "Directions", "https://maps.google.com/maps?q=Hampton+Inn-Chadds+Ford,+40+State+Farm+Drive,+Glen+Mills,+PA&hl=en&sll=41.117935,-77.604698&sspn=5.494946,11.634521&oq=hamp&hq=Hampton+Inn-Chadds+Ford,+40+State+Farm+Drive,+Glen+Mills,+PA&radius=15000&t=m&z=13", class: :button
 
     iframe.map frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Hampton+Inn-Chadds+Ford,+40+State+Farm+Drive,+Glen+Mills,+PA&amp;aq=0&amp;oq=hampton+inn&amp;sll=39.998624,-75.254631&amp;sspn=0.021829,0.045447&amp;ie=UTF8&amp;hq=Hampton+Inn-Chadds+Ford,+40+State+Farm+Drive,+Glen+Mills,+PA&amp;hnear=&amp;radius=15000&amp;ll=39.883316,-75.541182&amp;spn=0.071946,0.071946&amp;t=m&amp;iwloc=near&amp;output=embed"
 
