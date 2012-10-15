@@ -30,7 +30,5 @@ Feature: Guest
 
   Scenario: Travel
     When I click "Travel"
-    Then I should see a "Directions" section
-    And I should see a "Hotel" section
-    And I should see a "Flights" section
+    Then I should see a "Hotel" section
 
