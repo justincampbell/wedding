@@ -12,7 +12,7 @@ class RsvpController < ApplicationController
 
     RsvpMailer.rsvp(@guest, params[:party]).deliver
 
-    redirect_to :rsvp, alert: "Got it, thanks!"
+    redirect_to :rsvp, notice: "We've received your RSVP, thanks!"
   end
 
   def sign_in

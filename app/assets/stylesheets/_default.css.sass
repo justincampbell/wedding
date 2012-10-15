@@ -286,14 +286,18 @@ input[type='checkbox'], input[type="radio"]
 
 
 //ALERTS
-.alert
+.flash
   margin: 1em flex-gutter() 2em
   padding: 1em flex-gutter()
-  color: #B94A48
-  background-color: #F2DEDE
   border-color: #EED3D7
   font-size: 1.4em
   +rounded-corners
+  &.alert
+    background-color: #F2DEDE
+    color: red
+  &.notice
+    background-color: #DEF2DE
+    color: green
 
 .map
   height: 250px
