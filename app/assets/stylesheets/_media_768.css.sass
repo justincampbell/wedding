@@ -71,6 +71,10 @@ p
 .content-image
   max-width: 500px
   margin: 0 auto 4em
+  &.right
+    float: right
+    width: flex-grid(6)
+    margin-left: flex-gutter()
 
 form
   text-align: center
@@ -81,6 +85,15 @@ form
   +inline-block
   vertical-align: top
   margin: flex-gutter()
+
+.map
+  float: right
+  height: 350px
+  width: flex-grid(6)
+
+.section-info
+  float: left
+  width: flex-grid(6)
 
 
 

@@ -80,7 +80,7 @@ h5
   font-size: 1.8em
 
 p
-  padding: 0 flex-gutter() 2em
+  padding: 0 2em 2em
   font-size: 1.2em
   &.classy
     font-style: oblique
@@ -156,7 +156,6 @@ form
 
 .row
   +clearfix
-  padding: 0 flex-gutter()
 
 .party
   .person
@@ -186,6 +185,12 @@ form
 
 .section-content
   position: relative
+  padding: 0 flex-gutter()
+  margin-bottom: 4em
+  +clearfix
+
+.about-us
+  padding: 0
 
 label
   font-size: 1.6em
@@ -277,3 +282,13 @@ input[type='checkbox'], input[type="radio"]
 .note
   margin-top: -1.5em
   font-size: 1.25em
+
+.buttons
+  text-align: center
+
+.button
+  @extend input[type="submit"]
+  +inline-block
+  text-decoration: none
+  text-align: center
+  margin: 0 flex-gutter() 1em
