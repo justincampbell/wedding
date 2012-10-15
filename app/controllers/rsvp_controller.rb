@@ -28,6 +28,8 @@ class RsvpController < ApplicationController
 
         redirect_to :rsvp
       else
+        RsvpMailer.failed_login(params).deliver
+
         redirect_to :sign_in, alert: "You weren't found. Sorry! Please try again."
       end
     end
