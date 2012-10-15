@@ -8,7 +8,12 @@ h2 Welcome #{@guest.first_name}
           h4 = guest_form.object.full_name
           = guest_form.fields_for :rsvp do |rsvp_form|
             .formrow
-              h5 Attending?
+              h5
+                |
+                  Will
+                  #{ "your " if guest_form.object.first_name == "Guest" }
+                  #{guest_form.object == @guest ? "you" : guest_form.object.first_name}
+                  be attending?
             .formrow
               = rsvp_form.label :attending_true, "Yes"
               = rsvp_form.radio_button :attending, true, class: 'attending-radio'
@@ -17,7 +22,7 @@ h2 Welcome #{@guest.first_name}
               = rsvp_form.radio_button :attending, false, class: 'attending-radio'
             .attending-content class=(guest_form.object.rsvp.attending ? 'expanded' : nil)
               .formrow
-                h5 Orly? What'll you eat then?
+                h5 Please choose a meal:
               .formrow
                 = rsvp_form.label :meal_steak, "Steak"
                 = rsvp_form.radio_button :meal, :steak
@@ -31,23 +36,17 @@ h2 Welcome #{@guest.first_name}
                 = rsvp_form.label :meal_vegetarian, "Vegetarian"
                 = rsvp_form.radio_button :meal, :vegetarian
               .formrow
-                = rsvp_form.label :dietary, "Dietary requirements"
-                = rsvp_form.text_field :dietary
+                = rsvp_form.label :dietary, "Do you have any special dietary needs?"
+                = rsvp_form.text_field :dietary, placeholder: "I have no dietary requests"
               .formrow
-                h5 Taking the bus are we?
-              .formrow
-                = rsvp_form.label :bus, "Bus passenger?"
+                = rsvp_form.label :bus, "Will you be a bus passenger?"
                 = rsvp_form.check_box :bus
               - if guest_form.object.invited_to_rehearsal_dinner
                 .formrow
-                  h5 Practice makes perfect
-                .formrow
-                  = rsvp_form.label :rehearsal, "Rehearsal Dinner?"
+                  = rsvp_form.label :rehearsal, "Can you join us for the rehearsal dinner?"
                   = rsvp_form.check_box :rehearsal
               .formrow
-                h5 Still hungry after the reception?
-              .formrow
-                = rsvp_form.label :brunch, "Brunch?"
+                = rsvp_form.label :brunch, "Will you be joining us for brunch?"
                 = rsvp_form.check_box :brunch
             .divider
       = party_form.submit
