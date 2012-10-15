@@ -24,29 +24,36 @@ h2 Welcome #{@guest.first_name}
               .formrow
                 h5 Please choose a meal:
               .formrow
-                = rsvp_form.label :meal_steak, "Steak"
+                = rsvp_form.label :meal_steak, "Grilled Chateaubriand"
                 = rsvp_form.radio_button :meal, :steak
+              p.note Pretty much your standard filet, with cabernet sauce and sauteed mushrooms, and accompanied by red bliss garlic smashed potatoes.
               .formrow
-                = rsvp_form.label :meal_chicken, "Chicken"
+                = rsvp_form.label :meal_chicken, "Pollo Fromaggio"
                 = rsvp_form.radio_button :meal, :chicken
+              p.note Tastes like a pretty awesome chicken parm without the breading, finished with fontina cheese and sundried tomatoes, complimented with a champagne confetti sauce and accompanied by red bliss garlic smashed potatoes.
               .formrow
-                = rsvp_form.label :meal_seafood, "Seafood"
+                = rsvp_form.label :meal_seafood, "Brandied Seafood Newburg"
                 = rsvp_form.radio_button :meal, :seafood
+              p.note A delectable combination of shrimp, scallops, and jumbo lumb crab served over saffron rice.
               .formrow
-                = rsvp_form.label :meal_vegetarian, "Vegetarian"
+                = rsvp_form.label :meal_vegetarian, "Stuffed Ravioli and Grilled Vegetables"
                 = rsvp_form.radio_button :meal, :vegetarian
+              p.note Parmesan cheese and basil pasta with grilled portobello mushrooms, red, green, and yellow peppers.
               .formrow
                 = rsvp_form.label :dietary, "Do you have any special dietary needs?"
                 = rsvp_form.text_field :dietary, placeholder: "I have no dietary requests"
               .formrow
                 = rsvp_form.label :bus, "Will you be a bus passenger?"
                 = rsvp_form.check_box :bus
+              p.note Buses will depart the hotel at 3:30pm, and return at the end of the night.
+              .formrow
+                = rsvp_form.label :brunch, "Can you be join us for brunch?"
+                = rsvp_form.check_box :brunch
+              p.note Brunch will be served on Sunday morning near the hotel.
               - if guest_form.object.invited_to_rehearsal_dinner
                 .formrow
-                  = rsvp_form.label :rehearsal, "Can you join us for the rehearsal dinner?"
+                  = rsvp_form.label :rehearsal, "Will you join us for the rehearsal dinner?"
                   = rsvp_form.check_box :rehearsal
-              .formrow
-                = rsvp_form.label :brunch, "Will you be joining us for brunch?"
-                = rsvp_form.check_box :brunch
+                p.note Dinner will be at 6:30pm on January 4th, immediately following the rehearsal.
             .divider
       = party_form.submit
