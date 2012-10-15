@@ -1,1 +1,13 @@
-<%= @data %>
+<% @guest.party.guests.each do |guest| %>
+<%= guest.full_name %>
+Attending?: <%= guest.rsvp.attending ? "Yes" : "No" %>
+<% if guest.rsvp.attending %>
+Meal: <%= guest.rsvp.meal.capitalize %><%= " (#{guest.rsvp.dietary})" if guest.rsvp.dietary.present? %>
+Bus?: <%= guest.rsvp.bus ? "Yes" : "No" %>
+<% if guest.invited_to_rehearsal_dinner %>
+Rehearsal?: <%= guest.rsvp.rehearsal ? "Yes" : "No" %>
+<% end %>
+Brunch?: <%= guest.rsvp.brunch ? "Yes" : "No" %>
+<% end %>
+
+<% end %>
