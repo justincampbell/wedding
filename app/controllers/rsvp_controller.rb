@@ -8,11 +8,17 @@ class RsvpController < ApplicationController
 
   def update
     @guest = current_guest
-    @guest.party.update_attributes params[:party]
+    @party = @guest.party
 
-    RsvpMailer.rsvp(@guest).deliver
+    if @party.update_attributes params[:party]
+      RsvpMailer.rsvp(@guest).deliver
 
-    redirect_to :rsvp, notice: "We've received your RSVP, thanks!"
+      redirect_to :rsvp, notice: "We've received your RSVP, thanks!"
+    else
+      flash.now[:alert] = "Please make a meal selection for each guest that is attending"
+
+      render :index
+    end
   end
 
   def sign_in

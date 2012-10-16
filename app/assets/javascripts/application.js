@@ -33,7 +33,7 @@ function setContentHeight(){
 
 $('.attending-radio').click(function() {
   var radio = $(this);
-  var attendingContent = radio.parent().siblings('.attending-content');
+  var attendingContent = radio.parents('.formrow').siblings('.attending-content');
 
   var expanded = radio.attr('value') == "true";
 
