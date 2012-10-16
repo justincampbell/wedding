@@ -24,6 +24,8 @@ nav
     color: $nav-color
     text-decoration: none
     display: block
+    &:hover, &:active
+      color: shade($nav-color, 5)
 
 .menu-button
   float: right
@@ -210,8 +212,12 @@ input[type="submit"]
   font-size: 2.4em
   color: $white
   border: none
+  +box-shadow(1px 1px 1px 0 #ccc)
   +border-radius(5px)
   +linear-gradient(lighten($blue, 10), $blue 50%)
+  &:hover, &:active
+    +box-shadow(inset 1px 1px 1px 0 #000)
+    +linear-gradient($blue, darken($blue, 10) 50%)
 
 .attending-content
   -webkit-transition: opacity 1s ease-out
@@ -293,3 +299,15 @@ input[type='checkbox'], input[type="radio"]
   text-decoration: none
   text-align: center
   margin: 0 flex-gutter() 1em
+
+.sign-in
+  .guest
+    margin: 0 auto
+
+// .rsvp
+//   padding: .6em 0
+//   color: $white
+//   +border-radius(5px)
+//   +linear-gradient(lighten($blue, 10), $blue 50%)
+//   margin: .2em 0
+

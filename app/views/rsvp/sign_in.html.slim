@@ -1,13 +1,13 @@
 h2 R S V P
 .section-shading
   .section-content.sign-in
-    / h4 Sign In
     = form_tag sign_in_path, method: :post do
-      = label_tag :first_name
-      = text_field_tag :first_name
-      = label_tag :last_name
-      = text_field_tag :last_name
-      = label_tag :zip_code
-      = text_field_tag :zip_code
-      = submit_tag "Sign in"
+      .guest
+        = label_tag :first_name
+        = text_field_tag :first_name
+        = label_tag :last_name
+        = text_field_tag :last_name
+        = label_tag :zip_code
+        = text_field_tag :zip_code
+        = submit_tag "Sign in"
 
