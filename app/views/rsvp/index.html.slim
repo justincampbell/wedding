@@ -25,19 +25,19 @@ h2 Welcome #{@guest.first_name}
               .formrow
                 = rsvp_form.label :meal_steak, "Grilled Chateaubriand"
                 = rsvp_form.radio_button :meal, :steak
-              p.note Pretty much your standard filet, with cabernet sauce and sauteed mushrooms, and accompanied by red bliss garlic smashed potatoes.
+                = rsvp_form.label :meal_steak, "Pretty much your standard filet, with cabernet sauce and sauteed mushrooms, and accompanied by red bliss garlic smashed potatoes.", class: :note
               .formrow
                 = rsvp_form.label :meal_chicken, "Pollo Fromaggio"
                 = rsvp_form.radio_button :meal, :chicken
-              p.note Tastes like a pretty awesome chicken parm without the breading, finished with fontina cheese and sundried tomatoes, complimented with a champagne confetti sauce and accompanied by red bliss garlic smashed potatoes.
+                = rsvp_form.label :meal_chicken, "Tastes like a pretty awesome chicken parm without the breading, finished with fontina cheese and sundried tomatoes, complimented with a champagne confetti sauce and accompanied by red bliss garlic smashed potatoes.", class: :note
               .formrow
                 = rsvp_form.label :meal_seafood, "Brandied Seafood Newburg"
                 = rsvp_form.radio_button :meal, :seafood
-              p.note A delectable combination of shrimp, scallops, and jumbo lumb crab served over saffron rice.
+                = rsvp_form.label :meal_seafood, "A delectable combination of shrimp, scallops, and jumbo lumb crab served over saffron rice.", class: :note
               .formrow
                 = rsvp_form.label :meal_vegetarian, "Stuffed Ravioli and Grilled Vegetables"
                 = rsvp_form.radio_button :meal, :vegetarian
-              p.note Parmesan cheese and basil pasta with grilled portobello mushrooms, red, green, and yellow peppers.
+                = rsvp_form.label :meal_vegetarian, "Parmesan cheese and basil pasta with grilled portobello mushrooms, red, green, and yellow peppers.", class: :note
               .formrow
                 = rsvp_form.label :dietary, "Do you have any special dietary needs?"
                 = rsvp_form.text_field :dietary, placeholder: "I have no dietary requests"
