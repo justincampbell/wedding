@@ -84,6 +84,8 @@ class Guest < ActiveRecord::Base
   end
 
   def self.where_query(field, value)
+    value.strip!
+
     (nicknames_for_name(value) | [value]).map { |string|
       "#{field} #{like} '#{string}'"
     }.join(" or ")

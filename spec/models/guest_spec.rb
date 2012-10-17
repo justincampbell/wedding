@@ -29,5 +29,15 @@ describe Guest do
 
       it { should == guest }
     end
+
+    context "with whitespace" do
+      before :each do
+        params['first_name'] = " john"
+        params['last_name'] = "doe "
+        params['zip_code'] = " 12345 "
+      end
+
+      it { should == guest }
+    end
   end
 end
