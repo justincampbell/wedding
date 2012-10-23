@@ -3,6 +3,9 @@ html
   head
     title Beth and Justin
     = stylesheet_link_tag :application, media: :all
+    /[ if lt IE 9 ]
+      = stylesheet_link_tag :ie, media: :all
+      = javascript_include_tag :respond
     = tag :meta, name: :viewport, content: 'width=device-width'
     = csrf_meta_tags
 

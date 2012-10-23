@@ -8,6 +8,7 @@ gem 'jquery-rails'
 gem 'json'
 gem 'newrelic_rpm'
 gem 'paper_trail'
+gem 'respond-rails'
 gem 'slim'
 gem 'thin'
 
