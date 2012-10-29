@@ -13,7 +13,7 @@ class RsvpController < ApplicationController
     if @party.update_attributes params[:party]
       RsvpMailer.rsvp(@guest).deliver
 
-      redirect_to :rsvp, notice: "We've received your RSVP, thanks!"
+      redirect_to :thank_you
     else
       flash.now[:alert] = "Please make a meal selection for each guest that is attending"
 
