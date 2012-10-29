@@ -85,6 +85,7 @@ class Guest < ActiveRecord::Base
 
   def self.where_query(field, value)
     value.strip!
+    value = value.split(" ").first
 
     (nicknames_for_name(value) | [value]).map { |string|
       "#{field} #{like} '#{string}'"

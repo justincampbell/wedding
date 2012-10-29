@@ -39,5 +39,13 @@ describe Guest do
 
       it { should == guest }
     end
+
+    context "with more than one first name" do
+      before :each do
+        params['first_name'] = "John & Jane"
+      end
+
+      it { should == guest }
+    end
   end
 end
