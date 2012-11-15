@@ -47,5 +47,13 @@ describe Guest do
 
       it { should == guest }
     end
+
+    context "with nil params" do
+      before :each do
+        params['first_name'] = nil
+      end
+
+      it { should be_nil }
+    end
   end
 end

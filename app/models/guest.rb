@@ -80,10 +80,11 @@ class Guest < ActiveRecord::Base
   end
 
   def self.nicknames_for_name(name)
-    NICKNAMES.select { |nicknames| nicknames.include? name.downcase }.flatten
+    NICKNAMES.select { |nicknames| nicknames.include? name.to_s.downcase }.flatten
   end
 
   def self.where_query(field, value)
+    value = value.to_s
     value.strip!
     value = value.split(" ").first
 
