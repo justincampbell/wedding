@@ -46,9 +46,9 @@ h2 Welcome #{@guest.first_name}
                 = rsvp_form.check_box :bus
               p.note Buses will depart the hotel at 3:30pm, and return at the end of the night.
               .formrow
-                = rsvp_form.label :brunch, "Can you be join us for brunch?"
+                = rsvp_form.label :brunch, "Can you join us for lunch on Sunday?"
                 = rsvp_form.check_box :brunch
-              p.note Brunch will be served on Sunday morning near the hotel.
+              p.note We'd love for you to join the bride and groom at Beth's parent's house in West Chester, PA from 11-1 for an early lunch. Direction cards will be available at the reception.
               - if guest_form.object.invited_to_rehearsal_dinner
                 .formrow
                   = rsvp_form.label :rehearsal, "Will you join us for the rehearsal dinner?"
