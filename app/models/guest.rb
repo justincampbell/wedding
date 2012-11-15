@@ -48,6 +48,7 @@ class Guest < ActiveRecord::Base
     %w[robert bob rob],
     %w[ruth ruthie],
     %w[samantha sam],
+    %w[sarah sara],
     %w[stephen steven steve],
     %w[susan sue],
     %w[timothy tim timmy],
